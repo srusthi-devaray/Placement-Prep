@@ -1,0 +1,115 @@
+{
+ "generated": "2026-10-24",
+ "exercises": [
+  {
+   "id": "dbg-max-subarray",
+   "problemId": "max-subarray",
+   "title": "Fix the bug: Maximum Subarray Sum",
+   "bugType": "Logic",
+   "level": "Intermediate",
+   "topic": "Arrays",
+   "symptom": "Works on positive numbers but gives a wrong answer when the array has large negative values.",
+   "hint": "When should the running sum be thrown away and restarted?",
+   "brokenCode": "def solve(a):\n    cur = best = a[0]\n    for x in a[1:]:\n        cur = cur + x\n        best = max(best, cur)\n    return best\n\nn = int(input())\na = list(map(int, input().split()))\nprint(solve(a))\n"
+  },
+  {
+   "id": "dbg-valid-palindrome",
+   "problemId": "valid-palindrome",
+   "title": "Fix the bug: Valid Palindrome",
+   "bugType": "Logic",
+   "level": "Beginner",
+   "topic": "Strings",
+   "symptom": "Plain words work, but sentences with spaces or punctuation are rejected.",
+   "hint": "What should happen to characters that are not letters or digits?",
+   "brokenCode": "def solve(s):\n    t = [c.lower() for c in s]\n    return t == t[::-1]\n\ns = input()\nprint(\"true\" if solve(s) else \"false\")\n"
+  },
+  {
+   "id": "dbg-two-sum",
+   "problemId": "two-sum",
+   "title": "Fix the bug: Two Sum",
+   "bugType": "Output",
+   "level": "Beginner",
+   "topic": "Hashing",
+   "symptom": "The right two positions are found, but they are printed in the wrong order.",
+   "hint": "Which index was stored earlier, the one in `seen` or `j`?",
+   "brokenCode": "def solve(a, target):\n    seen = {}\n    for j, x in enumerate(a):\n        if target - x in seen:\n            return (j, seen[target - x])\n        seen[x] = j\n\nn, target = map(int, input().split())\na = list(map(int, input().split()))\ni, j = solve(a, target)\nprint(i, j)\n"
+  },
+  {
+   "id": "dbg-first-unique-char",
+   "problemId": "first-unique-char",
+   "title": "Fix the bug: First Non-Repeating Character",
+   "bugType": "Logic",
+   "level": "Beginner",
+   "topic": "Hashing",
+   "symptom": "It returns the first character that REPEATS, not the first one that is unique.",
+   "hint": "Read the condition out loud. What does it select?",
+   "brokenCode": "from collections import Counter\ns = input()\n\ndef solve(s):\n    c = Counter(s)\n    for i, ch in enumerate(s):\n        if c[ch] > 1:\n            return i\n    return -1\n\nprint(solve(s))\n"
+  },
+  {
+   "id": "dbg-max-sum-k",
+   "problemId": "max-sum-k",
+   "title": "Fix the bug: Maximum Sum of K Consecutive Elements",
+   "bugType": "Off-by-one",
+   "level": "Beginner",
+   "topic": "Sliding Window",
+   "symptom": "The answer is wrong when the best window is the one that starts at index 1.",
+   "hint": "Which window does the loop skip?",
+   "brokenCode": "def solve(a, k):\n    w = sum(a[:k])\n    best = w\n    for i in range(k + 1, len(a)):\n        w += a[i] - a[i - k]\n        best = max(best, w)\n    return best\n\nn, k = map(int, input().split())\na = list(map(int, input().split()))\nprint(solve(a, k))\n"
+  },
+  {
+   "id": "dbg-valid-parentheses",
+   "problemId": "valid-parentheses",
+   "title": "Fix the bug: Valid Parentheses",
+   "bugType": "Edge case",
+   "level": "Beginner",
+   "topic": "Stacks",
+   "symptom": "Inputs such as \"((\" are accepted as valid.",
+   "hint": "What should be true about the stack when the whole string has been read?",
+   "brokenCode": "s = input().strip()\n\ndef solve(s):\n    pairs = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}\n    st = []\n    for ch in s:\n        if ch in \"([{\":\n            st.append(ch)\n        else:\n            if not st or st[-1] != pairs[ch]:\n                return False\n            st.pop()\n    return True\n\nprint(\"true\" if solve(s) else \"false\")\n"
+  },
+  {
+   "id": "dbg-binary-search",
+   "problemId": "binary-search",
+   "title": "Fix the bug: Binary Search",
+   "bugType": "Infinite loop",
+   "level": "Beginner",
+   "topic": "Binary Search",
+   "symptom": "On some inputs the program never finishes (Time Limit Exceeded).",
+   "hint": "Does the search range always shrink after each step?",
+   "brokenCode": "def solve(a, target):\n    lo, hi = 0, len(a) - 1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if a[mid] == target:\n            return mid\n        if a[mid] < target:\n            lo = mid\n        else:\n            hi = mid - 1\n    return -1\n\nn, target = map(int, input().split())\na = list(map(int, input().split()))\nprint(solve(a, target))\n"
+  },
+  {
+   "id": "dbg-assign-cookies",
+   "problemId": "assign-cookies",
+   "title": "Fix the bug: Assign Cookies",
+   "bugType": "Logic",
+   "level": "Beginner",
+   "topic": "Greedy",
+   "symptom": "Works when the greed factors are already sorted, fails otherwise.",
+   "hint": "The greedy idea needs both lists in a particular order.",
+   "brokenCode": "def solve(g, s):\n    s.sort()\n    i = 0\n    for cookie in s:\n        if i < len(g) and cookie >= g[i]:\n            i += 1\n    return i\n\nn, m = map(int, input().split())\ng = list(map(int, input().split()))\ns = list(map(int, input().split()))\nprint(solve(g, s))\n"
+  },
+  {
+   "id": "dbg-rotate-array",
+   "problemId": "rotate-array",
+   "title": "Fix the bug: Rotate Array Right",
+   "bugType": "Edge case",
+   "level": "Intermediate",
+   "topic": "Arrays",
+   "symptom": "Fails when k is larger than the array length.",
+   "hint": "Rotating by n positions gives the same array. How do you use that?",
+   "brokenCode": "def solve(a, k):\n    n = len(a)\n    return a[n - k:] + a[:n - k]\n\nn, k = map(int, input().split())\na = list(map(int, input().split()))\nprint(*solve(a, k))\n"
+  },
+  {
+   "id": "dbg-longest-unique-substring",
+   "problemId": "longest-unique-substring",
+   "title": "Fix the bug: Longest Substring Without Repeating Characters",
+   "bugType": "Logic",
+   "level": "Intermediate",
+   "topic": "Sliding Window",
+   "symptom": "Fails on strings like \"abba\", where a character was seen earlier but is no longer inside the window.",
+   "hint": "A previous position only matters if it is inside the current window.",
+   "brokenCode": "s = input()\n\ndef solve(s):\n    last = {}\n    left = best = 0\n    for right, ch in enumerate(s):\n        if ch in last:\n            left = last[ch] + 1\n        last[ch] = right\n        best = max(best, right - left + 1)\n    return best\n\nprint(solve(s))\n"
+  }
+ ]
+}

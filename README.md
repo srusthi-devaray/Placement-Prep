@@ -5,7 +5,7 @@ An all-in-one placement preparation platform built with the MERN stack. It helps
 Live demo: https://placement-prep-nu.vercel.app (The backend runs on a free server, so the first load can take up to a minute to wake up.)
 
 ✨ Features
-📊 Dashboard & Progress Tracking
+📊 Dashboard & Progress Tracking:
 Placement readiness score with a transparent breakdown.
 Daily progress, streaks, goals and milestones.
 Study planner with weekly plans, spaced revision and missed-task rescheduling.
@@ -21,6 +21,7 @@ Timed coding assessments and debugging exercises.
 Aptitude practice by topic and difficulty, with timed and mock tests and accuracy / speed analytics.
 CS fundamentals lessons and server-graded quizzes: OOP, DBMS, SQL, Operating Systems and Computer Networks.
 Company preparation tracks and skill-gap roadmaps.
+
 🎤 Mock Interviews
 Voice or text answers, with optional read-aloud questions and pressure mode.
 Live rule-based feedback on length, structure, filler words, pace and key concepts.
@@ -36,6 +37,7 @@ Works in basic mode when no AI key is configured.
 📄 Resume Tools
 Resume analyzer with ATS-style score and keyword match against a job description.
 Resume builder with live preview, saved versions and PDF export (Print / Save as PDF).
+
 💼 Career Management
 Live job and internship listings with a skill-match score.
 Company application tracker and goal tracker.
@@ -46,14 +48,14 @@ Password reset and reminder emails when an email service is configured.
 JWT authentication, protected routes and per-user data isolation.
 Password hashing, file validation.
 
+
 🛠️ Tech Stack
-Layer	Technology
 Frontend	React 18, Vite, React Router, CSS
 Backend	Node.js, Express
 Database	MongoDB Atlas, Mongoose
 Authentication	JSON Web Tokens (JWT), bcryptjs
 Testing	Node.js test suite
-Hosting	Vercel (frontend),rate limiting and Render (backend)
+Hosting	Vercel (frontend) and Render (backend)
 
 ## 🏗️ Project Structure
  
@@ -81,16 +83,18 @@ placement-prep/
 ├── render.yaml
 └── README.md
 
-🚀 Run it on your computer
+🚀 Run it on your computer:
 1. Install these first
 Tool	Check it works	Download
 Node.js 18 or newer (includes npm)	node -v	https://nodejs.org
 Git	git --version	https://git-scm.com
 A free MongoDB Atlas account	(see step 3)	https://www.mongodb.com/atlas
+
 2. Clone the project
 bash
 git clone https://github.com/srusthi-devaray/Placement-Prep
 cd Placement-Prep
+
 3. Create a free MongoDB database (Atlas)
 Sign in to MongoDB Atlas and create a free M0 cluster.
 Database Access → Add New Database User → choose a username and a password. Write them down.
@@ -149,8 +153,7 @@ Judge0	Set CODE_RUNNER=judge0, JUDGE0_URL and JUDGE0_RAPIDAPI_KEY
 
 The local mode is refused when NODE_ENV=production, so it only works on your own machine.
 
-🔧 Optional settings
-All are optional. The app works without them.
+🔧 Optional settings:All are optional. The app works without them.
 
 Variable (in server/.env)	What it enables
 ANTHROPIC_API_KEY	Full AI chat, AI answer review and AI resume rewriting
@@ -171,5 +174,4 @@ Company tracks are community-style information and are marked unverified. Always
 Job listings come from public job APIs. Check the original posting before applying.
 Mock interview feedback is rule-based. AI coaching appears only when an AI key is set.
 
-👩‍💻 Author
-Srusthi Devaray GitHub: https://github.com/srusthi-devaray
+

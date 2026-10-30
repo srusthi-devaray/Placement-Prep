@@ -10,11 +10,13 @@ Placement readiness score with a transparent breakdown.
 Daily progress, streaks, goals and milestones.
 Study planner with weekly plans, spaced revision and missed-task rescheduling.
 Weekly and monthly reports with CSV / PDF export, and an optional public progress page.
+
 💻 Coding Practice
 51 coding problems across 17 topics and three difficulty levels.
 Code editor, hints, editorials and hidden test cases.
 Submission history, bookmarks, personal notes and a revision queue.
 Timed coding assessments and debugging exercises.
+
 🎯 Aptitude & Technical Preparation
 Aptitude practice by topic and difficulty, with timed and mock tests and accuracy / speed analytics.
 CS fundamentals lessons and server-graded quizzes: OOP, DBMS, SQL, Operating Systems and Computer Networks.
@@ -24,11 +26,13 @@ Voice or text answers, with optional read-aloud questions and pressure mode.
 Live rule-based feedback on length, structure, filler words, pace and key concepts.
 Resume-based and project-based questions, and follow-up questions.
 Optional AI coaching when an AI key is configured.
+
 🤖 PlaceBot Assistant
 Text and voice chat.
 Accepts images, video frames, PDF and DOCX files.
 Uses your notes and a built-in knowledge base, and shows its sources.
 Works in basic mode when no AI key is configured.
+
 📄 Resume Tools
 Resume analyzer with ATS-style score and keyword match against a job description.
 Resume builder with live preview, saved versions and PDF export (Print / Save as PDF).
@@ -37,9 +41,11 @@ Live job and internship listings with a skill-match score.
 Company application tracker and goal tracker.
 Project showcase with optional public sharing.
 Password reset and reminder emails when an email service is configured.
+
 🔐 Authentication & Security
 JWT authentication, protected routes and per-user data isolation.
 Password hashing, file validation.
+
 🛠️ Tech Stack
 Layer	Technology
 Frontend	React 18, Vite, React Router, CSS
@@ -49,7 +55,9 @@ Authentication	JSON Web Tokens (JWT), bcryptjs
 Testing	Node.js test suite
 Hosting	Vercel (frontend),rate limiting and Render (backend)
 
-🏗️ Project Structure
+## 🏗️ Project Structure
+ 
+```
 placement-prep/
 ├── client/                 # React + Vite frontend
 │   ├── src/

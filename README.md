@@ -1,148 +1,167 @@
-# Placement Prep – Interview & Placement Preparation Tracker
+Placement Prep – Interview & Placement Preparation Tracker
 
-An all-in-one placement preparation platform built using the MERN stack to help students prepare for coding interviews, aptitude tests, technical interviews, and job applications while tracking their progress.
+An all-in-one placement preparation platform built with the MERN stack. It helps students practise coding, aptitude and CS fundamentals, take mock interviews, improve their resume and track their progress in one place.
 
-## ✨ Features
+Live demo: https://placement-prep-nu.vercel.app (The backend runs on a free server, so the first load can take up to a minute to wake up.)
 
-### 📊 Dashboard & Progress Tracking
-- Placement readiness score based on practice progress.
-- Daily progress tracking, goals, and milestones.
-- Study planner with weekly plans, spaced revision, and missed-task rescheduling.
-- Weekly and monthly progress reports with CSV/PDF export.
+✨ Features
+📊 Dashboard & Progress Tracking
+Placement readiness score with a transparent breakdown.
+Daily progress, streaks, goals and milestones.
+Study planner with weekly plans, spaced revision and missed-task rescheduling.
+Weekly and monthly reports with CSV / PDF export, and an optional public progress page.
+💻 Coding Practice
+51 coding problems across 17 topics and three difficulty levels.
+Code editor, hints, editorials and hidden test cases.
+Submission history, bookmarks, personal notes and a revision queue.
+Timed coding assessments and debugging exercises.
+🎯 Aptitude & Technical Preparation
+Aptitude practice by topic and difficulty, with timed and mock tests and accuracy / speed analytics.
+CS fundamentals lessons and server-graded quizzes: OOP, DBMS, SQL, Operating Systems and Computer Networks.
+Company preparation tracks and skill-gap roadmaps.
+🎤 Mock Interviews
+Voice or text answers, with optional read-aloud questions and pressure mode.
+Live rule-based feedback on length, structure, filler words, pace and key concepts.
+Resume-based and project-based questions, and follow-up questions.
+Optional AI coaching when an AI key is configured.
+🤖 PlaceBot Assistant
+Text and voice chat.
+Accepts images, video frames, PDF and DOCX files.
+Uses your notes and a built-in knowledge base, and shows its sources.
+Works in basic mode when no AI key is configured.
+📄 Resume Tools
+Resume analyzer with ATS-style score and keyword match against a job description.
+Resume builder with live preview, saved versions and PDF export (Print / Save as PDF).
+💼 Career Management
+Live job and internship listings with a skill-match score.
+Company application tracker and goal tracker.
+Project showcase with optional public sharing.
+Password reset and reminder emails when an email service is configured.
+🔐 Authentication & Security
+JWT authentication, protected routes and per-user data isolation.
+Password hashing, file validation.
+🛠️ Tech Stack
+Layer	Technology
+Frontend	React 18, Vite, React Router, CSS
+Backend	Node.js, Express
+Database	MongoDB Atlas, Mongoose
+Authentication	JSON Web Tokens (JWT), bcryptjs
+Testing	Node.js test suite
+Hosting	Vercel (frontend),rate limiting and Render (backend)
 
-### 💻 Coding Practice
-- 51 coding problems across 17 topics and multiple difficulty levels.
-- Code editor, hints, editorials, and hidden test cases.
-- Submission history, bookmarks, notes, and revision queue.
-- Timed coding assessments and debugging exercises.
-
-### 🎯 Aptitude & Technical Preparation
-- Aptitude practice with topic-wise and difficulty-wise questions.
-- Timed and mock tests with accuracy and time analytics.
-- CS fundamentals lessons and quizzes covering OOP, DBMS, SQL, Operating Systems, and Computer Networks.
-- Company preparation tracks and skill-gap roadmaps.
-
-### 🎤 Mock Interviews
-- Voice-based or text-based mock interviews.
-- Real-time feedback and communication metrics.
-- Resume-based and project-based interview questions.
-- Optional AI-generated follow-up questions and coaching.
-
-### 🤖 PlaceBot AI Assistant
-- Text and voice interactions.
-- Supports images, video frames, PDF, and DOCX inputs.
-- Uses personal notes and the knowledge base to support preparation.
-- Basic mode available when the external AI provider is not configured.
-
-### 📄 Resume Tools
-- Resume analyzer with ATS-style scoring and keyword matching against job descriptions.
-- Resume builder with version saving, restoring, renaming, and deleting.
-- Export resumes using the browser's Print / Save as PDF feature.
-
-### 💼 Jobs & Career Management
-- Job and internship listings through supported sources.
-- Optional Adzuna integration.
-- Company preparation tracks.
-- Personal project portfolio with optional public sharing.
-- Password reset and reminder emails when email services are configured.
-
-### 🔐 Authentication & Security
-- JWT-based authentication.
-- Protected routes and per-user data isolation.
-- Password reset support.
-- File validation and security safeguards.
-
-## 🛠️ Tech Stack
-
-- **Frontend:** React, Vite, JavaScript, CSS
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB Atlas, Mongoose
-- **Authentication:** JSON Web Tokens (JWT)
-- **AI Integration:** Optional Anthropic API
-- **Coding Execution:** Docker or Judge0, depending on configuration
-- **Testing:** Node.js test suite
-
-## 🏗️ Project Structure
-
-```text
+🏗️ Project Structure
 placement-prep/
 ├── client/                 # React + Vite frontend
 │   ├── src/
 │   │   ├── pages/          # Application pages
-│   │   ├── lib/            # Reusable utilities and components
-│   │   ├── App.jsx
-│   │   └── styles.css
-│   ├── package.json
-│   └── vite.config.js
+│   │   ├── lib/            # Code editor, speech and theme helpers
+│   │   ├── api.js          # API client
+│   │   └── App.jsx
+│   ├── vercel.json
+│   └── package.json
 ├── server/                 # Express backend
-│   ├── config/             # Database configuration
+│   ├── config/             # Database connection
+│   ├── data/               # Problem bank and debugging exercises
 │   ├── middleware/         # Authentication and error handling
-│   ├── models/             # Database models
+│   ├── models/             # Mongoose models
 │   ├── routes/             # API routes
 │   ├── services/           # Business logic
 │   ├── test/               # Automated tests
-│   ├── server.js
-│   └── package.json
-├── .gitignore
-├── DEPLOY.md
-├── README.md
-└── render.yaml
-```
-⚙️ Prerequisites
-Before running the project, install the following:
-Node.js and npm — to run the frontend and backend.
-Git — to clone the repository.
-MongoDB Atlas or a local MongoDB instance — to provide the database.
+│   ├── .env.example        # Template for your environment variables
+│   └── server.js
+├── DEPLOY.md               # Deployment guide
+├── render.yaml
+└── README.md
 
-🚀 Getting Started
-Follow these steps to run the project on your local machine.
-
-Step 1: Clone the Repository
-Open a terminal and run:git clone YOUR_GITHUB_REPOSITORY_URL
-Replace YOUR_GITHUB_REPOSITORY_URL with the HTTPS URL of this GitHub repository.
-Navigate into the project folder:
+🚀 Run it on your computer
+1. Install these first
+Tool	Check it works	Download
+Node.js 18 or newer (includes npm)	node -v	https://nodejs.org
+Git	git --version	https://git-scm.com
+A free MongoDB Atlas account	(see step 3)	https://www.mongodb.com/atlas
+2. Clone the project
+bash
+git clone https://github.com/srusthi-devaray/Placement-Prep
 cd Placement-Prep
+3. Create a free MongoDB database (Atlas)
+Sign in to MongoDB Atlas and create a free M0 cluster.
+Database Access → Add New Database User → choose a username and a password. Write them down.
+Network Access → Add IP Address → Allow access from anywhere (0.0.0.0/0) → Confirm. Wait until the status is Active.
+Database → Connect → Drivers → copy the connection string. It looks like: mongodb+srv://<username>:<password>@cluster0.xxxxx.mongodb.net/?retryWrites=true&w=majority
+Replace <username> and <password> with yours, and add the database name placementprep before the ?: mongodb+srv://myuser:mypassword@cluster0.xxxxx.mongodb.net/placementprep?retryWrites=true&w=majority
 
-Step 2: Install Backend Dependencies
-Open a terminal in the project root and run:cd server,npm install
-This installs the packages required by the backend.
+If your password has special characters (such as @ or #), replace them with their URL-encoded form (@ → %40, # → %23) or choose a simple password.
 
-Step 3: Configure Backend Environment Variables
-Create a .env file inside the server folder.
-Example:
+4. Set up and start the backend
+bash
+cd server
+npm install
+
+Create your environment file from the template:
+bash
+# Mac / Linux
+cp .env.example .env
+# Windows (Command Prompt)
+copy .env.example .env
+
+Open server/.env and set at least these four values:
+
+env
+MONGODB_URI=your_connection_string_from_step_3
+JWT_SECRET=any_long_random_text
 PORT=5000
-MONGODB_URI=your_mongodb_connection_string
-JWT_SECRET=your_private_random_secret
-Replace the example values with your own configuration.
-PORT: The port used by the backend during local development.
-MONGODB_URI: Your MongoDB connection string
-JWT_SECRET: A private secret used to sign authentication tokens, if JWT authentication is implemented.
+CLIENT_URL=http://localhost:5173
 
-Step 4: Start the Backend
-From the server folder, use the development command configured in server/package.json.
-For example, if the project defines a dev script:
-npm run dev
-If it defines only a start script, use:
+Start the server:
+bash
+npm run dev      # auto-restarts when you change code
+# or
 npm start
-The backend should start on the configured local port. Check the terminal for startup errors and database connection status.
+Open http://localhost:5000/api/health. You should see "db":"connected".
 
-Step 5: Install Frontend Dependencies
-Open a second terminal in Visual Studio Code.
-Run:cd client,npm install
-
-Step 6: Configure the Frontend
-Create a .env file inside the client folder.
-For local development, if the backend is running on port 5000 and its API routes use the /api prefix, configure:VITE_API_URL=http://localhost:5000/api
-Change the port if your backend uses a different one.
-The frontend environment variable should point to the local backend when testing locally, rather than the deployed backend.
-
-Step 7: Start the Frontend
-From the client folder, run:
+5. Set up and start the frontend (in a second terminal)
+bash
+cd client
+npm install
 npm run dev
-Vite will display a local URL in the terminal, usually:http://localhost:5173
-Open that URL in your browser.
-Keep the frontend and backend terminals running while testing the application.
+Keep both terminals running.
+Open http://localhost:5173 in your browser
 
-Note: Run/Submit in Coding Practice, Timed Assessment and Debugging need a code runner, which is not available on the free host.
-All other features work online.
 
+💻 Run & Submit for coding problems (optional)
+
+Run, Submit, Timed Assessment and Debugging need a code runner. Without one the app still works, and you can read problems, hints and solutions. Choose one option, add it to server/.env, and restart the server:
+
+Option	Setup:
+Docker (safest)	Install Docker Desktop and start it, run docker pull python:3.12-alpine once, then set CODE_RUNNER=docker
+
+Local Python (development only)	Install Python 3 and add it to PATH, then set CODE_RUNNER=local. This is not a sandbox. Use it only on your own computer.
+
+Judge0	Set CODE_RUNNER=judge0, JUDGE0_URL and JUDGE0_RAPIDAPI_KEY
+
+The local mode is refused when NODE_ENV=production, so it only works on your own machine.
+
+🔧 Optional settings
+All are optional. The app works without them.
+
+Variable (in server/.env)	What it enables
+ANTHROPIC_API_KEY	Full AI chat, AI answer review and AI resume rewriting
+ADZUNA_APP_ID, ADZUNA_APP_KEY	India-focused job listings
+BREVO_API_KEY or RESEND_API_KEY, MAIL_FROM	Password reset and reminder emails
+ADMIN_EMAILS	Accounts allowed to verify company tracks
+
+🧪 Run the tests
+bash
+cd server
+npm test
+
+⚠️ Known limitations
+
+Run / Submit, Timed Assessment and Debugging do not work on the free hosted demo because it has no code runner. They work when you run the project locally with a runner.
+
+Company tracks are community-style information and are marked unverified. Always check official company pages.
+Job listings come from public job APIs. Check the original posting before applying.
+Mock interview feedback is rule-based. AI coaching appears only when an AI key is set.
+
+👩‍💻 Author
+Srusthi Devaray GitHub: https://github.com/srusthi-devaray
